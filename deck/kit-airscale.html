@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kit Airscale - Forward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --cream: #FDF3EB; --orange: #E8602A; --ink: #1A1A1A;
+  --orange-soft: #FBE3D6; --orange-deep: #C44A18;
+  --ink-soft: #4A4239; --line: #EAD9CC; --white: #ffffff;
+}
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); overflow: hidden; }
+.serif { font-family: 'Playfair Display', Georgia, serif; }
+.deck { width: 100vw; height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+.deck::-webkit-scrollbar { display: none; }
+.slide { width: 100vw; height: 100vh; scroll-snap-align: start; scroll-snap-stop: always; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 72px 7% 56px; }
+.dots { position: fixed; right: 26px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 60; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(232,96,42,.28); cursor: pointer; border: none; transition: all .25s; }
+.dot.active { background: var(--orange); transform: scale(1.5); }
+.tag { display: inline-flex; align-items: center; gap: 7px; background: var(--orange-soft); color: var(--orange-deep); font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 7px 16px; border-radius: 100px; }
+.tag.on-dark { background: rgba(255,255,255,.16); color: #fff; }
+h1.title { font-size: clamp(2.6rem, 5.2vw, 4.6rem); font-weight: 600; line-height: 1.05; letter-spacing: -.02em; }
+h2.title { font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 600; line-height: 1.1; letter-spacing: -.015em; color: var(--ink); }
+.lead { font-size: clamp(1.05rem, 1.5vw, 1.3rem); color: var(--ink-soft); line-height: 1.6; }
+.card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; }
+.grid { display: grid; gap: 14px; width: 100%; }
+.kicker { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); }
+.foot { position: fixed; bottom: 16px; left: 7%; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(26,26,26,.34); z-index: 55; }
+.foot.on-dark { color: rgba(255,255,255,.4); }
+.num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: var(--orange); line-height: 1; }
+.dark { background: var(--ink); color: var(--cream); }
+.dark h2.title, .dark h1.title { color: #fff; }
+.dark .lead { color: rgba(253,243,235,.74); }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-weight: 700; font-size: 1rem; padding: 14px 26px; border-radius: 100px; }
+@media print {
+  html, body { overflow: visible; height: auto; }
+  .deck { height: auto; overflow: visible; display: block; }
+  .slide { height: 100vh; page-break-after: always; break-after: page; }
+  .dots, .foot { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="dots" id="dots"></div>
+<div class="foot" id="foot">Forward - Kit Airscale</div>
+
+<div class="deck" id="deck">
+
+  <!-- 0. HERO -->
+  <section class="slide" style="background: var(--cream);">
+    <div style="max-width: 880px; width: 100%; display:flex; flex-direction:column; gap: 26px;">
+      <div><span class="tag">Kit gratuit - Forward</span></div>
+      <h1 class="title serif">9 cas d'usage Airscale,<br>un skill pour chacun.</h1>
+      <p class="lead" style="max-width: 620px;">Le sourcing et l'enrichissement de leads, packagés en workflows prêts à brancher dans votre IA. Le guide côté business, le repo côté technique.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 6px;">
+        <span class="card" style="padding:11px 18px; font-weight:600; font-size:.92rem;">Sourcing</span>
+        <span class="card" style="padding:11px 18px; font-weight:600; font-size:.92rem;">Coordonnees</span>
+        <span class="card" style="padding:11px 18px; font-weight:600; font-size:.92rem;">Enrichissement</span>
+        <span class="card" style="padding:11px 18px; font-weight:600; font-size:.92rem;">Identification</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. C'EST QUOI -->
+  <section class="slide" style="background: var(--white);">
+    <div style="max-width: 900px; width: 100%; display:flex; flex-direction:column; gap: 24px;">
+      <span class="kicker">Le constat</span>
+      <h2 class="title serif">Airscale, c'est Clay en plus simple<br>et facturé à l'usage.</h2>
+      <p class="lead">Une plateforme de sourcing et d'enrichissement branchée sur 50+ fournisseurs de données, interrogés en cascade. Vos assistants construisent vos listes et complètent vos contacts tout seuls.</p>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 8px;">
+        <div class="card"><div class="num">+50</div><div style="margin-top:8px; font-weight:700;">fournisseurs</div><div style="font-size:.9rem; color:var(--ink-soft);">en cascade, pour la couverture max</div></div>
+        <div class="card"><div class="num">0</div><div style="margin-top:8px; font-weight:700;">abonnement</div><div style="font-size:.9rem; color:var(--ink-soft);">vous payez les leads, le comptage est gratuit</div></div>
+        <div class="card"><div class="num">1</div><div style="margin-top:8px; font-weight:700;">commande</div><div style="font-size:.9rem; color:var(--ink-soft);">une liste ou un fichier enrichi, pas une après-midi</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. LES 4 FAMILLES -->
+  <section class="slide" style="background: var(--cream);">
+    <div style="max-width: 960px; width: 100%; display:flex; flex-direction:column; gap: 24px;">
+      <span class="kicker">La structure</span>
+      <h2 class="title serif">Quatre familles, du premier contact à la donnée.</h2>
+      <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start;"><span class="num">01</span><div><div class="serif" style="font-size:1.3rem; font-style:italic;">Sourcing</div><div style="color:var(--ink-soft); font-size:.95rem; margin-top:4px;">Construire des listes : cibles ICP et comptes en signal d'achat.</div></div></div>
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start;"><span class="num">02</span><div><div class="serif" style="font-size:1.3rem; font-style:italic;">Coordonnees</div><div style="color:var(--ink-soft); font-size:.95rem; margin-top:4px;">Emails pro vérifiés, mobiles, coordonnées multicanal.</div></div></div>
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start;"><span class="num">03</span><div><div class="serif" style="font-size:1.3rem; font-style:italic;">Enrichissement</div><div style="color:var(--ink-soft); font-size:.95rem; margin-top:4px;">Fiches entreprise et réconciliation des profils LinkedIn.</div></div></div>
+        <div class="card" style="display:flex; gap:16px; align-items:flex-start;"><span class="num">04</span><div><div class="serif" style="font-size:1.3rem; font-style:italic;">Identification</div><div style="color:var(--ink-soft); font-size:.95rem; margin-top:4px;">Reverse lookup et recherche IA structurée et sourcée.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LES 9 CAS -->
+  <section class="slide" style="background: var(--white);">
+    <div style="max-width: 1000px; width: 100%; display:flex; flex-direction:column; gap: 20px;">
+      <span class="kicker">Le kit</span>
+      <h2 class="title serif">Les 9 cas d'usage.</h2>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:12px;">
+        <div class="card"><div style="font-weight:700;">Liste ICP</div><div style="font-size:.86rem; color:var(--ink-soft);">vos cibles à la demande</div></div>
+        <div class="card"><div style="font-weight:700;">Signaux d'achat</div><div style="font-size:.86rem; color:var(--ink-soft);">levée récente, équipe qui grossit</div></div>
+        <div class="card"><div style="font-weight:700;">Emails pro</div><div style="font-size:.86rem; color:var(--ink-soft);">fichier enrichi et vérifié</div></div>
+        <div class="card"><div style="font-weight:700;">Mobiles</div><div style="font-size:.86rem; color:var(--ink-soft);">numéros pour le cold calling</div></div>
+        <div class="card"><div style="font-weight:700;">Multicanal</div><div style="font-size:.86rem; color:var(--ink-soft);">email pro + perso + mobile</div></div>
+        <div class="card"><div style="font-weight:700;">Fiche entreprise</div><div style="font-size:.86rem; color:var(--ink-soft);">firmographie + décideurs</div></div>
+        <div class="card"><div style="font-weight:700;">URLs LinkedIn</div><div style="font-size:.86rem; color:var(--ink-soft);">profils manquants retrouvés</div></div>
+        <div class="card"><div style="font-weight:700;">Reverse lookup</div><div style="font-size:.86rem; color:var(--ink-soft);">email ou numéro vers profil</div></div>
+        <div class="card"><div style="font-weight:700;">Recherche IA</div><div style="font-size:.86rem; color:var(--ink-soft);">réponse structurée sourcée</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. COMMENT S'EN SERVIR -->
+  <section class="slide dark" style="background: var(--ink);">
+    <div style="max-width: 920px; width: 100%; display:flex; flex-direction:column; gap: 24px;">
+      <span class="tag on-dark">Trois façons de l'utiliser</span>
+      <h2 class="title serif">Du plus rapide au plus industriel.</h2>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:14px;">
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:20px;">
+          <div class="num">1</div><div style="font-weight:700; margin-top:8px; color:#fff;">Agent + MCP</div><div style="font-size:.9rem; color:rgba(253,243,235,.7); margin-top:4px;">Branchez le serveur MCP Airscale dans votre Claude. Zéro installation, pour l'ad hoc.</div>
+        </div>
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:20px;">
+          <div class="num">2</div><div style="font-weight:700; margin-top:8px; color:#fff;">Agent + skills</div><div style="font-size:.9rem; color:rgba(253,243,235,.7); margin-top:4px;">Ouvrez le repo, remplissez le config, l'agent suit le skill.</div>
+        </div>
+        <div style="background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:20px;">
+          <div class="num">3</div><div style="font-weight:700; margin-top:8px; color:#fff;">Ligne de commande</div><div style="font-size:.9rem; color:rgba(253,243,235,.7); margin-top:4px;">Un script par skill. Déterministe, pour le volume et le cron.</div>
+        </div>
+      </div>
+      <p class="lead" style="color: rgba(253,243,235,.6); font-size: .95rem;">github.com/ColinDargent/forward-airscale</p>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <section class="slide" style="background: var(--orange);">
+    <div style="max-width: 820px; width: 100%; display:flex; flex-direction:column; gap: 24px; align-items:flex-start;">
+      <span class="tag on-dark">Forward</span>
+      <h2 class="title serif" style="color:#fff;">On le branche sur vos vraies données.</h2>
+      <p class="lead" style="color: rgba(255,255,255,.86);">Le kit est gratuit et open source. Si vous voulez qu'on l'installe sur votre stack et qu'on l'adapte à votre ICP, on en parle.</p>
+      <a class="btn" style="background:#fff; color:var(--orange-deep);" href="https://www.forward-ai.fr">forward-ai.fr</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const TOTAL = 6;
+const deck = document.getElementById('deck');
+const dots = document.getElementById('dots');
+const foot = document.getElementById('foot');
+const darkIdx = [4, 5];
+for (let i = 0; i < TOTAL; i++) {
+  const d = document.createElement('button');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => deck.querySelectorAll('.slide')[i].scrollIntoView({behavior:'smooth'});
+  dots.appendChild(d);
+}
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+      const idx = Array.from(deck.querySelectorAll('.slide')).indexOf(e.target);
+      dots.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+      foot.className = 'foot' + (darkIdx.includes(idx) ? ' on-dark' : '');
+    }
+  });
+}, { root: deck, threshold: 0.5 });
+deck.querySelectorAll('.slide').forEach(s => obs.observe(s));
+document.addEventListener('keydown', (e) => {
+  const cur = Array.from(deck.querySelectorAll('.slide')).findIndex(s => {
+    const r = s.getBoundingClientRect(); return r.top >= -5 && r.top < window.innerHeight/2;
+  });
+  if (e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); const n = Math.min(cur+1, TOTAL-1); deck.querySelectorAll('.slide')[n].scrollIntoView({behavior:'smooth'}); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); const n = Math.max(cur-1, 0); deck.querySelectorAll('.slide')[n].scrollIntoView({behavior:'smooth'}); }
+});
+</script>
+</body>
+</html>

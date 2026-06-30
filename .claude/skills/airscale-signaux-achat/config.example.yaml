@@ -1,0 +1,14 @@
+# Comptes en signal d'achat - copie ce fichier en config.yaml et adapte-le.
+job:
+  - "Head of Sales"
+  - "CEO"
+people_location:
+  - "France"
+industry:
+  - "Software"
+company_size: "11-50"        # ex: "1-10", "11-50", "51-200"
+funding: true
+funding_date_months: 6       # 3, 6, 12 ou 24
+growth_department: null      # ex: "Sales", "Engineering" - laisse null pour ignorer
+count: 10
+output_path: null            # sinon examples/signaux-achat.csv

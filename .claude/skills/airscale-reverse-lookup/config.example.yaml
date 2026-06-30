@@ -1,0 +1,5 @@
+# Reverse lookup - copie ce fichier en config.yaml et adapte-le.
+# Renseigne email OU phone (email prioritaire si les deux sont remplis).
+email: "victor@airscale.io"
+phone: null               # ex: "+33610607076" (format international)
+output_path: null         # sinon examples/reverse-lookup.md

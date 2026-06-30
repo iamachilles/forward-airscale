@@ -1,0 +1,10 @@
+# Liste de prospects ICP - copie ce fichier en config.yaml et adapte-le.
+job_titles:
+  - "Head of Sales"
+  - "VP Sales"
+exclude_titles: []
+locations:
+  - "France"
+keywords: []             # ex: ["SaaS", "fintech"] - cherche dans tout le profil
+size: 10                 # 1 a 100
+output_path: null        # sinon examples/liste-icp.csv

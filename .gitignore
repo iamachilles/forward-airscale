@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Secrets
+.env
+
+# OS
+.DS_Store
+
+# Sorties generees localement (les exemples commites vivent dans examples/, valides a la main)
+*.local.md
+*.local.csv
+config.yaml
+.claude/skills/*/config.yaml

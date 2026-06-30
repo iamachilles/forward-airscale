@@ -1,0 +1,8 @@
+# Fiche entreprise enrichie - copie ce fichier en config.yaml et adapte-le.
+company_linkedin_url: "https://www.linkedin.com/company/airscale-io"
+decision_maker_titles:
+  - "CEO"
+  - "Head of Sales"
+  - "Founder"
+max_contacts: 3
+output_path: null        # sinon examples/fiche-entreprise.md
