@@ -40,10 +40,15 @@ Chaque skill : `SKILL.md` (8 sections, mode script + mode MCP) + `config.example
 - **Scripts en REST `requests`**, pas via le MCP : pas de SDK Python Airscale, et surtout le volume doit rester déterministe (cron, zéro token), comme le choix de Colin pour Linkup. Le MCP Airscale est intégré comme **chemin agent / ad hoc** (mapping endpoint -> outil MCP dans chaque SKILL.md).
 - **Pas de duplication MDX** : la source de contenu reste `guides/` (frontmatter Astro-ready) ; le mapping vers le schema de collection du site se fait cote `site-forward`.
 
+## Fait depuis (2026-06-30, après le build local)
+
+1. **Push GitHub** : repo poussé en **privé** sur `github.com/iamachilles/forward-airscale` (le token n'a pas les droits sur l'org ColinDargent ; gh CLI = compte iamachilles). 64 fichiers, branche `main`.
+2. **Integration site** : faite et poussée en **PR** sur `site-forward` -> [ColinDargent/site-forward#13](https://github.com/ColinDargent/site-forward/pull/13). Famille `airscale` + 4 thèmes dans `families.ts`, 9 cas en MDX, générateur de pages `/cas-d-usage/airscale/[slug]`. `npm run build` + `validate-schema` OK (9 pages cas + page famille + carte sur le hub). **Non mergée** (le merge déploie sur Vercel).
+
 ## Reste a faire (Jalon 2, avec Colin)
 
-1. **Push GitHub** du repo `forward-airscale` (owner Achille + Colin). `GITHUB_TOKEN` dispo dans le `.env` du vault.
-2. **Integration site** : créer la famille `airscale` sur `site-forward` (Astro) à côté de `linkup`/`unipile`, importer les guides, ajouter le kit à `/cas-d-usage`. Voir `site/README.md`.
+1. **Rendre `forward-airscale` public sous ColinDargent** (transfert depuis iamachilles, ou recréation) : les liens du site (`repoUrl`/`repo_url`) pointent déjà vers `iamachilles/forward-airscale`. **Prérequis au merge de la PR #13**, sinon les boutons "récupérer le dossier" donnent un 404.
+2. **Merger la PR #13** une fois le repo public (déploie le kit sur le site).
 3. **Confirmer les noms d'outils MCP** d'enrichissement/export depuis le serveur MCP live, et le cout exact d'airsearch via MCP (annoncé 2 crédits vs 1 en REST). Mettre à jour les SKILL.md.
 4. **Publier le post LinkedIn** (passer `status: draft` -> `scheduled` -> `published`).
 5. **Partager le deck** (`deck/kit-airscale.pdf`).

@@ -10,7 +10,7 @@ description: "9 cas d'usage prets a l'emploi pour transformer Airscale en result
 
 Airscale est une plateforme de **sourcing et d'enrichissement de leads** (facon Clay) branchee sur 50+ fournisseurs de donnees. On a packagé nos 9 cas d'usage preferes : pour chacun, un guide cote business et un skill cote technique que vous (ou votre IA) branchez en quelques minutes.
 
-> Le guide explique le quoi et le pourquoi. Le repo ([forward-airscale](https://github.com/ColinDargent/forward-airscale)) contient le skill, le script et un exemple reel.
+> Le guide explique le quoi et le pourquoi. Le repo ([forward-airscale](https://github.com/iamachilles/forward-airscale)) contient le skill, le script et un exemple reel.
 
 ## Pourquoi un outil dedie plutot que des exports manuels
 
@@ -41,7 +41,7 @@ Airscale est une plateforme de **sourcing et d'enrichissement de leads** (facon 
 ## Comment demarrer
 
 1. Recuperez votre cle API sur [app.airscale.io](https://app.airscale.io) (onglet API).
-2. Clonez [forward-airscale](https://github.com/ColinDargent/forward-airscale) et installez (voir le README).
+2. Clonez [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez (voir le README).
 3. Choisissez un cas, remplissez son `config.yaml`, lancez.
 4. Ou, sans rien installer : branchez le [serveur MCP Airscale](https://docs.airscale.io/mcp/airscale-mcp-server) dans votre Claude et demandez-lui de suivre le skill.
 

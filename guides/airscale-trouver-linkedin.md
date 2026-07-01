@@ -24,7 +24,7 @@ Votre CSV d'origine, plus une colonne `linkedin_url`. C'est souvent le prerequis
 
 ## Comment vous en servir
 
-1. Clonez le repo [forward-airscale](https://github.com/ColinDargent/forward-airscale) et installez-le.
+1. Clonez le repo [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez-le.
 2. Copiez le `config.example.yaml` du skill `airscale-trouver-linkedin` en `config.yaml`.
 3. Pointez `input_csv` vers votre fichier et indiquez les colonnes prenom, nom, entreprise.
 4. Lancez le skill (ou via le MCP Airscale).

@@ -24,7 +24,7 @@ Un CSV importable dans votre CRM, une ligne par decideur : `firstname, lastname,
 
 ## Comment vous en servir
 
-1. Clonez le repo [forward-airscale](https://github.com/ColinDargent/forward-airscale) et installez-le (voir le README).
+1. Clonez le repo [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez-le (voir le README).
 2. Copiez `config.example.yaml` du skill `airscale-liste-icp` en `config.yaml`.
 3. Renseignez vos filtres : `job_titles`, `locations`, `keywords`, `size`.
 4. Lancez le skill (ou demandez a votre IA branchee sur le MCP Airscale de le faire).

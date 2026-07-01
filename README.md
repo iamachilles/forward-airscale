@@ -13,7 +13,7 @@ On ne reconstruit pas l'API Airscale et on ne duplique pas le serveur MCP offici
 ## Installation
 
 ```bash
-git clone https://github.com/ColinDargent/forward-airscale.git
+git clone https://github.com/iamachilles/forward-airscale.git
 cd forward-airscale
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt

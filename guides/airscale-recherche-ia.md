@@ -24,7 +24,7 @@ Une fiche markdown : les champs que vous avez demandes (selon votre schema), la 
 
 ## Comment vous en servir
 
-1. Clonez le repo [forward-airscale](https://github.com/ColinDargent/forward-airscale) et installez-le.
+1. Clonez le repo [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez-le.
 2. Copiez le `config.example.yaml` du skill `airscale-recherche-ia` en `config.yaml`.
 3. Ecrivez votre `prompt` et, si vous voulez une sortie exploitable, decrivez les champs voulus dans un schema JSON.
 4. Lancez le skill (ou via le MCP Airscale, outil `airscale_airsearch`).

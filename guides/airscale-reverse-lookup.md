@@ -24,7 +24,7 @@ Une fiche markdown : nom, poste, entreprise, secteur, localisation, LinkedIn, et
 
 ## Comment vous en servir
 
-1. Clonez le repo [forward-airscale](https://github.com/ColinDargent/forward-airscale) et installez-le.
+1. Clonez le repo [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez-le.
 2. Copiez le `config.example.yaml` du skill `airscale-reverse-lookup` en `config.yaml`.
 3. Renseignez l'`email` ou le `phone` a resoudre.
 4. Lancez le skill (ou via le MCP Airscale).
