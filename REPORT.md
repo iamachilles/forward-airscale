@@ -45,13 +45,16 @@ Chaque skill : `SKILL.md` (8 sections, mode script + mode MCP) + `config.example
 1. **Push GitHub** : repo poussé en **privé** sur `github.com/iamachilles/forward-airscale` (le token n'a pas les droits sur l'org ColinDargent ; gh CLI = compte iamachilles). 64 fichiers, branche `main`.
 2. **Integration site** : faite et poussée en **PR** sur `site-forward` -> [ColinDargent/site-forward#13](https://github.com/ColinDargent/site-forward/pull/13). Famille `airscale` + 4 thèmes dans `families.ts`, 9 cas en MDX, générateur de pages `/cas-d-usage/airscale/[slug]`. `npm run build` + `validate-schema` OK (9 pages cas + page famille + carte sur le hub). **Non mergée** (le merge déploie sur Vercel).
 
-## Reste a faire (Jalon 2, avec Colin)
+## Décision : le repo vit sous iamachilles
 
-1. **Rendre `forward-airscale` public sous ColinDargent** (transfert depuis iamachilles, ou recréation) : les liens du site (`repoUrl`/`repo_url`) pointent déjà vers `iamachilles/forward-airscale`. **Prérequis au merge de la PR #13**, sinon les boutons "récupérer le dossier" donnent un 404.
-2. **Merger la PR #13** une fois le repo public (déploie le kit sur le site).
-3. **Confirmer les noms d'outils MCP** d'enrichissement/export depuis le serveur MCP live, et le cout exact d'airsearch via MCP (annoncé 2 crédits vs 1 en REST). Mettre à jour les SKILL.md.
-4. **Publier le post LinkedIn** (passer `status: draft` -> `scheduled` -> `published`).
-5. **Partager le deck** (`deck/kit-airscale.pdf`).
+Pas d'org Forward, donc le kit reste sous **`github.com/iamachilles/forward-airscale`** (public, 2026-07-01). Les liens du repo et du site pointent tous dessus. `forward-linkup`/`forward-unipile` restent chez ColinDargent, airscale est chez Achille : assumé.
+
+## Reste a faire
+
+1. **Débloquer le déploiement Vercel** : la PR #13 est **mergée sur `main`** (commit `6c9207b`), mais Vercel a **bloqué le déploiement de prod** ("Deployment was blocked", car le commit vient de `iamachilles` et pas de Colin). Les pages airscale sont en 404 sur le site tant que Colin ne relance pas le déploiement (bouton "Redeploy" sur `main`, ou autoriser iamachilles comme auteur de déploiement dans les réglages Vercel du projet). Seul point qui dépend vraiment de Colin (pas d'accès Vercel côté Achille : ni token `.env`, ni CLI).
+2. **Confirmer les noms d'outils MCP** d'enrichissement/export + le cout airsearch via MCP (annoncé 2 crédits vs 1 en REST). Non bloquant. Mettre à jour les SKILL.md ensuite.
+3. **Publier le post LinkedIn** (`status: draft` -> `scheduled` -> `published`).
+4. **Partager le deck** (`deck/kit-airscale.pdf`).
 
 ## Rollback
 
