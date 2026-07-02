@@ -4,7 +4,7 @@ tool: airscale
 famille: "Enrichissement"
 slug: airscale-trouver-linkedin
 skill: airscale-trouver-linkedin
-description: "Completez un fichier ou il manque les profils LinkedIn, a partir du prenom, du nom et de l'entreprise."
+description: "Complétez un fichier où il manque les profils LinkedIn, à partir du prénom, du nom et de l'entreprise."
 reading_time: 2
 ---
 
@@ -12,30 +12,30 @@ reading_time: 2
 
 ## En bref
 
-Vous avez des contacts (prenom, nom, entreprise) mais pas leurs profils LinkedIn. Le skill les retrouve, ligne par ligne.
+Vous avez des contacts (prénom, nom, entreprise) mais pas leurs profils LinkedIn. Le skill les retrouve, ligne par ligne.
 
-## Le probleme
+## Le problème
 
-Beaucoup d'enrichissements (email, telephone) partent de l'URL LinkedIn. Un fichier qui ne l'a pas est bloque a l'entree. Et un export de salon ou de webinaire arrive rarement avec le LinkedIn.
+Beaucoup d'enrichissements (email, téléphone) partent de l'URL LinkedIn. Un fichier qui ne l'a pas est bloqué à l'entrée. Et un export de salon ou de webinaire arrive rarement avec le LinkedIn.
 
 ## Ce que vous obtenez
 
-Votre CSV d'origine, plus une colonne `linkedin_url`. C'est souvent le prerequis des autres skills "coordonnees".
+Votre CSV d'origine, plus une colonne `linkedin_url`. C'est souvent le prérequis des autres skills "coordonnées".
 
 ## Comment vous en servir
 
 1. Clonez le repo [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez-le.
 2. Copiez le `config.example.yaml` du skill `airscale-trouver-linkedin` en `config.yaml`.
-3. Pointez `input_csv` vers votre fichier et indiquez les colonnes prenom, nom, entreprise.
+3. Pointez `input_csv` vers votre fichier et indiquez les colonnes prénom, nom, entreprise.
 4. Lancez le skill (ou via le MCP Airscale).
 
-## Cout
+## Coût
 
-Facture a l'usage par Airscale (par recherche d'URL).
+Facturé à l'usage par Airscale (par recherche d'URL).
 
-## Adapter a votre cas
+## Adapter à votre cas
 
-- Avant un enrichissement : enchainez ce skill puis l'enrichissement email ou telephone.
-- Liste evenement : transformez un fichier nom + societe en profils exploitables.
+- Avant un enrichissement : enchaînez ce skill puis l'enrichissement email ou téléphone.
+- Liste événement : transformez un fichier nom + société en profils exploitables.
 
-> Exemple de sortie reelle : `examples/trouver-linkedin.csv` dans le repo.
+> Exemple de sortie réelle : `examples/trouver-linkedin.csv` dans le repo.

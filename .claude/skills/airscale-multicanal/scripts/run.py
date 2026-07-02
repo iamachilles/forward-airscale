@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Coordonnees multicanal via Airscale : email pro + email perso + mobile.
+"""Coordonnées multicanal via Airscale : email pro + email perso + mobile.
 
-Pour chaque URL LinkedIn du CSV, appelle les endpoints des `channels` demandes :
-/email, /personal-email, /phone. Ecrit le CSV d'origine + email, personal_email, phone.
+Pour chaque URL LinkedIn du CSV, appelle les endpoints des `channels` demandés :
+/email, /personal-email, /phone. Écrit le CSV d'origine + email, personal_email, phone.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.csv]
@@ -24,7 +24,7 @@ ENRICH = ["email", "personal_email", "phone"]
 
 
 def fetch_channel(channel: str, li: str) -> str:
-    """Retourne la valeur du canal pour une URL LinkedIn, '' si echec."""
+    """Retourne la valeur du canal pour une URL LinkedIn, '' si échec."""
     try:
         if channel == "email":
             return unwrap(post("email", {"linkedin_profile_url": li})).get("email", "")
@@ -34,12 +34,12 @@ def fetch_channel(channel: str, li: str) -> str:
             r = unwrap(post("phone", {"linkedin_profile_url": li}))
             return r.get("phone_numbers", r.get("phone", ""))
     except Exception as e:
-        print(f"  ! {channel} echoue : {e}", file=sys.stderr)
+        print(f"  ! {channel} échoue : {e}", file=sys.stderr)
     return ""
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Coordonnees multicanal Airscale")
+    ap = argparse.ArgumentParser(description="Coordonnées multicanal Airscale")
     ap.add_argument("--config", required=True)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
@@ -59,7 +59,7 @@ def main() -> None:
         in_rows = list(reader)
         in_cols = reader.fieldnames or []
     if not in_rows:
-        sys.exit("CSV d'entree vide.")
+        sys.exit("CSV d'entrée vide.")
 
     out_rows = []
     for row in in_rows:

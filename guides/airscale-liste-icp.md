@@ -1,42 +1,42 @@
 ---
-title: "Une liste de prospects ICP a la demande"
+title: "Une liste de prospects ICP à la demande"
 tool: airscale
 famille: "Sourcing"
 slug: airscale-liste-icp
 skill: airscale-liste-icp
-description: "Generez une liste de prospects correspondant a votre client ideal, avec leur entreprise et leur LinkedIn, en une commande."
+description: "Générez une liste de prospects correspondant à votre client idéal, avec leur entreprise et leur LinkedIn, en une commande."
 reading_time: 3
 ---
 
-# Une liste de prospects ICP a la demande
+# Une liste de prospects ICP à la demande
 
 ## En bref
 
-Vous decrivez votre client ideal (fonctions, zone, mots-cles) et vous obtenez une liste de prospects prete a importer : nom, poste, entreprise, taille, secteur, URL LinkedIn.
+Vous décrivez votre client idéal (fonctions, zone, mots-clés) et vous obtenez une liste de prospects prête à importer : nom, poste, entreprise, taille, secteur, URL LinkedIn.
 
-## Le probleme
+## Le problème
 
-Construire une liste de cibles a la main, c'est des heures sur LinkedIn et des exports a recoller, avant meme d'avoir parle a qui que ce soit. Et la liste est perimee le mois suivant.
+Construire une liste de cibles à la main, c'est des heures sur LinkedIn et des exports à recoller, avant même d'avoir parlé à qui que ce soit. Et la liste est périmée le mois suivant.
 
 ## Ce que vous obtenez
 
-Un CSV importable dans votre CRM, une ligne par decideur : `firstname, lastname, jobTitle, companyName, companySize, companyIndustry, profileUrl`. Le volume disponible est affiche avant que vous ne payiez quoi que ce soit.
+Un CSV importable dans votre CRM, une ligne par décideur : `firstname, lastname, jobTitle, companyName, companySize, companyIndustry, profileUrl`. Le volume disponible est affiché avant que vous ne payiez quoi que ce soit.
 
 ## Comment vous en servir
 
 1. Clonez le repo [forward-airscale](https://github.com/iamachilles/forward-airscale) et installez-le (voir le README).
 2. Copiez `config.example.yaml` du skill `airscale-liste-icp` en `config.yaml`.
 3. Renseignez vos filtres : `job_titles`, `locations`, `keywords`, `size`.
-4. Lancez le skill (ou demandez a votre IA branchee sur le MCP Airscale de le faire).
+4. Lancez le skill (ou demandez à votre IA branchée sur le MCP Airscale de le faire).
 
-## Cout
+## Coût
 
-Facture a l'usage par Airscale (~0,1 credit par prospect retourne). Le comptage prealable est gratuit : vous connaissez le volume avant de lancer.
+Facturé à l'usage par Airscale (~0,1 crédit par prospect retourné). Le comptage préalable est gratuit : vous connaissez le volume avant de lancer.
 
-## Adapter a votre cas
+## Adapter à votre cas
 
 - Sourcing de partenaires ou revendeurs : visez les fonctions "partenariats".
-- Sourcing par techno ou secteur : ajoutez des mots-cles (ex : un CRM, un secteur).
-- Zone fine : pays, region ou ville.
+- Sourcing par techno ou secteur : ajoutez des mots-clés (ex : un CRM, un secteur).
+- Zone fine : pays, région ou ville.
 
-> Exemple de sortie reelle : `examples/liste-icp.csv` dans le repo.
+> Exemple de sortie réelle : `examples/liste-icp.csv` dans le repo.

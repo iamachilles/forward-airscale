@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Enrichir un fichier en emails pro verifies via Airscale /email.
+"""Enrichir un fichier en emails pro vérifiés via Airscale /email.
 
-Pour chaque ligne : /email (par URL LinkedIn, sinon prenom+nom+domaine).
-Ecrit le CSV d'origine + email, email_status, provider.
+Pour chaque ligne : /email (par URL LinkedIn, sinon prénom+nom+domaine).
+Écrit le CSV d'origine + email, email_status, provider.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.csv]
@@ -54,14 +54,14 @@ def main() -> None:
         in_rows = list(reader)
         in_cols = reader.fieldnames or []
     if not in_rows:
-        sys.exit("CSV d'entree vide.")
+        sys.exit("CSV d'entrée vide.")
 
     out_rows = []
     for row in in_rows:
         body = build_body(row, cfg)
         enriched = dict(row)
         if not body:
-            print("  ! ligne ignoree (ni LinkedIn, ni nom+domaine)", file=sys.stderr)
+            print("  ! ligne ignorée (ni LinkedIn, ni nom+domaine)", file=sys.stderr)
             for k in ENRICH:
                 enriched[k] = ""
             out_rows.append(enriched)
@@ -70,8 +70,8 @@ def main() -> None:
         print(f"[email] {label}", file=sys.stderr)
         try:
             resp = unwrap(post("email", body))
-        except Exception as e:  # une ligne qui echoue ne casse pas le batch
-            print(f"  ! echec : {e}", file=sys.stderr)
+        except Exception as e:  # une ligne qui échoue ne casse pas le batch
+            print(f"  ! échec : {e}", file=sys.stderr)
             resp = {}
         enriched["email"] = resp.get("email", "")
         enriched["email_status"] = resp.get("email_status", "")

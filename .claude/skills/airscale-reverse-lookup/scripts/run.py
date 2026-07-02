@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Reverse lookup via Airscale : email ou telephone -> profil enrichi.
+"""Reverse lookup via Airscale : email ou téléphone -> profil enrichi.
 
 /reverse-email (si email) ou /reverse-phone (si phone, champ mobile_phone).
-Ecrit une fiche markdown.
+Écrit une fiche markdown.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.md]
@@ -19,21 +19,21 @@ sys.path.insert(0, str(ROOT))
 from lib.airscale_helpers import load_config, post, unwrap, write_output  # noqa: E402
 
 DEFAULT_OUT = ROOT / "examples" / "reverse-lookup.md"
-# Champs candidats a afficher en premier (on rend ceux qui existent).
+# Champs candidats à afficher en premier (on rend ceux qui existent).
 PREFERRED = [
-    ("firstname", "Prenom"), ("lastname", "Nom"), ("fullName", "Nom complet"),
+    ("firstname", "Prénom"), ("lastname", "Nom"), ("fullName", "Nom complet"),
     ("headline", "Headline"), ("jobTitle", "Poste"), ("companyName", "Entreprise"),
     ("company", "Entreprise"), ("industry", "Secteur"), ("location", "Localisation"),
     ("profileUrl", "LinkedIn"), ("linkedin_url", "LinkedIn"), ("url", "LinkedIn"),
-    ("email", "Email"), ("phone_numbers", "Telephone"),
+    ("email", "Email"), ("phone_numbers", "Téléphone"),
 ]
-# Cles techniques a ne pas afficher (urns, images, identifiants internes).
+# Clés techniques à ne pas afficher (urns, images, identifiants internes).
 NOISE = {"picture", "background", "entityUrn", "objectUrn", "identifier",
          "profilePictureUrl", "premium", "creator"}
 
 
 def fmt(val) -> str:
-    """Rend une valeur lisible (deballe les dicts type localisation)."""
+    """Rend une valeur lisible (déballe les dicts type localisation)."""
     if isinstance(val, dict):
         for k in ("defaultValue", "default", "shortValue", "full_name", "name"):
             if val.get(k):
@@ -60,7 +60,7 @@ def render(body: dict) -> str:
         for k, v in body.items()
         if k not in covered and k not in NOISE and isinstance(v, (str, int, float)) and v
     ]
-    return "\n".join(lines + extra) or "- (aucun champ retourne)"
+    return "\n".join(lines + extra) or "- (aucun champ retourné)"
 
 
 def main() -> None:
@@ -86,7 +86,7 @@ def main() -> None:
 
     out_text = (
         f"# Reverse lookup - {source}\n\n"
-        f"_Genere le {date.today().isoformat()} via Airscale._\n\n"
+        f"_Généré le {date.today().isoformat()} via Airscale._\n\n"
         f"{render(body)}\n"
     )
     dest = args.out or cfg.get("output_path") or str(DEFAULT_OUT)

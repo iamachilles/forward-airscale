@@ -6,5 +6,5 @@ exclude_titles: []
 locations:
   - "France"
 keywords: []             # ex: ["SaaS", "fintech"] - cherche dans tout le profil
-size: 10                 # 1 a 100
+size: 10                 # 1 à 100
 output_path: null        # sinon examples/liste-icp.csv

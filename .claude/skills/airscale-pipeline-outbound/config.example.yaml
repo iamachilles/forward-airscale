@@ -1,0 +1,31 @@
+# Pipeline outbound : sourcing ICP + waterfall coordonnées en un seul job.
+# Copie ce fichier en config.yaml et adapte-le à ta cible.
+
+# Fonctions ciblées (include).
+job_titles:
+  - "Head of Sales"
+  - "VP Sales"
+
+# Fonctions à exclure.
+exclude_titles:
+  - "Assistant"
+
+# Zones géographiques (pays, région ou ville).
+locations:
+  - "France"
+
+# Mots-clés cherchés dans tout le profil.
+keywords:
+  - "SaaS"
+
+# Nombre de cibles à sourcer (1-100).
+size: 10
+
+# Canaux de coordonnées à récupérer pour chaque lead (parmi : email, phone, personal_email).
+channels:
+  - email
+  - phone
+  - personal_email
+
+# CSV de sortie (null = examples/pipeline-outbound.csv).
+output_path: null

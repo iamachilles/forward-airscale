@@ -7,41 +7,41 @@ description: Use when you have a list of LinkedIn profile URLs and need their mo
 
 ## Objectif & quand
 
-Recuperer le **numero de mobile** d'une liste de decideurs (a partir de leurs URLs LinkedIn) pour alimenter une sequence d'appels. A lancer quand l'email seul ne suffit pas et que tu veux ajouter le canal telephone.
+Récupérer le **numéro de mobile** d'une liste de décideurs (à partir de leurs URLs LinkedIn) pour alimenter une séquence d'appels. À lancer quand l'email seul ne suffit pas et que tu veux ajouter le canal téléphone.
 
-## Prerequis
+## Prérequis
 
 Deux modes :
 - **Script (`run.py`)** : `AIRSCALE_API_KEY` dans `.env` + `pip install -r requirements.txt`.
-- **Agent ad hoc** : serveur [MCP Airscale](https://docs.airscale.io/mcp/airscale-mcp-server) (outil d'enrichissement telephone).
-- Un CSV d'entree avec une colonne URL LinkedIn.
+- **Agent ad hoc** : serveur [MCP Airscale](https://docs.airscale.io/mcp/airscale-mcp-server) (outil d'enrichissement téléphone).
+- Un CSV d'entrée avec une colonne URL LinkedIn.
 
 ## Config
 
 | Champ | Role | Exemple |
 |---|---|---|
-| `input_csv` | Chemin du CSV d'entree | `"input.example.csv"` |
+| `input_csv` | Chemin du CSV d'entrée | `"input.example.csv"` |
 | `linkedin_column` | Colonne contenant l'URL LinkedIn | `"linkedin_url"` |
 | `output_path` | CSV de sortie | `null` |
 
-## Adapter a ton cas
+## Adapter à ton cas
 
-- **Enchainer apres une liste ICP** : passe le CSV de `airscale-liste-icp` (colonne `profileUrl`) en entree, en reglant `linkedin_column: "profileUrl"`.
-- **Prioriser** : ne garde que les comptes chauds (`airscale-signaux-achat`) avant de consommer des credits telephone (plus chers que l'email).
+- **Enchaîner après une liste ICP** : passe le CSV de `airscale-liste-icp` (colonne `profileUrl`) en entrée, en réglant `linkedin_column: "profileUrl"`.
+- **Prioriser** : ne garde que les comptes chauds (`airscale-signaux-achat`) avant de consommer des crédits téléphone (plus chers que l'email).
 
-## Procedure
+## Procédure
 
-Pour chaque ligne : un `/phone` avec `linkedin_profile_url`. Synchrone. La colonne `phone` (et `provider`) est ajoutee. Une ligne en echec n'arrete pas le batch.
+Pour chaque ligne : un `/phone` avec `linkedin_profile_url`. Synchrone. La colonne `phone` (et `provider`) est ajoutée. Une ligne en échec n'arrête pas le batch.
 
-> Mapping MCP : enrichissement telephone du serveur MCP Airscale (nom d'outil exact a confirmer cote MCP).
+> Mapping MCP : enrichissement téléphone du serveur MCP Airscale (nom d'outil exact à confirmer côté MCP).
 
 ## Livrable
 
 Un CSV `examples/telephones.csv` : colonnes d'origine + `phone, provider`.
 
-## Cout estime
+## Coût estimé
 
-Facture a l'usage par Airscale (enrichissement telephone par contact ; en general plus cher que l'email). Cible des contacts deja qualifies pour maitriser le cout.
+Facturé à l'usage par Airscale (enrichissement téléphone par contact ; en général plus cher que l'email). Cible des contacts déjà qualifiés pour maîtriser le coût.
 
 ## Exemple
 

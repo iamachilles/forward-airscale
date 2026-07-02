@@ -15,11 +15,11 @@ Construit le 2026-06-30 par Claude, en autonomie, calqué sur le repo [`forward-
 | Post LinkedIn d'annonce (draft FR) | OK | `shared/content/linkedin/achille/2026-06-30-kit-airscale-9-skills.md` |
 | Deck partageable (HTML + PDF, charte Forward) | OK | `deck/kit-airscale.html` + `.pdf` (6 pages) |
 
-## Les 9 skills (4 familles)
+## Les 11 skills (4 familles)
 
-Sourcing : `airscale-liste-icp`, `airscale-signaux-achat`.
-Coordonnees : `airscale-emails-fichier`, `airscale-telephones`, `airscale-multicanal`.
-Enrichissement : `airscale-fiche-entreprise`, `airscale-trouver-linkedin`.
+Sourcing : `airscale-liste-icp`, `airscale-signaux-achat`, `airscale-pipeline-outbound`.
+Coordonnées : `airscale-emails-fichier`, `airscale-telephones`, `airscale-multicanal`.
+Enrichissement : `airscale-fiche-entreprise`, `airscale-trouver-linkedin`, `airscale-hygiene-crm`.
 Identification : `airscale-reverse-lookup`, `airscale-recherche-ia`.
 
 Chaque skill : `SKILL.md` (8 sections, mode script + mode MCP) + `config.example.yaml` + `scripts/run.py` (+ input/schema d'exemple). Les 14 endpoints REST Airscale sont couverts.
@@ -29,7 +29,7 @@ Chaque skill : `SKILL.md` (8 sections, mode script + mode MCP) + `config.example
 - Tous les scripts compilent (`py_compile`).
 - Smoke test offline (post mocké, zéro réseau) : 9/9 OK.
 - Préflights gratuits sur la vraie clé : solde + `/find-people/count` + `/leads-finder/preview` confirmés.
-- Exemples reels generes : 9/9, vraies donnees (emails valides, mobiles, fiches, reverse, airsearch sourcé).
+- Exemples réels générés : 9/9, vraies données (emails valides, mobiles, fiches, reverse, airsearch sourcé).
 
 ## Cout
 
@@ -48,6 +48,12 @@ Chaque skill : `SKILL.md` (8 sections, mode script + mode MCP) + `config.example
 ## Décision : le repo vit sous iamachilles
 
 Pas d'org Forward, donc le kit reste sous **`github.com/iamachilles/forward-airscale`** (public, 2026-07-01). Les liens du repo et du site pointent tous dessus. `forward-linkup`/`forward-unipile` restent chez ColinDargent, airscale est chez Achille : assumé.
+
+## Fait depuis (2026-07-01)
+
+- **Accents FR** posés dans tout le repo (README, SKILL.md, guides, lib, run.py, configs, deck) : demande d'Achille, divergence assumée avec `forward-linkup` (ASCII). Fait via 4 sous-agents + relecture.
+- **2 skills composites ajoutés** (portant le kit de 9 à 11), suite à l'analyse "endpoint-shaped vs job-shaped" : `airscale-pipeline-outbound` (sourcing ICP + waterfall coordonnées en un job -> liste prête à séquencer) et `airscale-hygiene-crm` (ré-enrichit un export CRM : postes/entreprises à jour, changement de boîte, emails périmés). Exemples réels générés (pipeline : 2 leads complets ; hygiène : changement Fishtown Analytics -> dbt Labs détecté). `/profile` a un shape imbriqué (`positionGroups.contents[0].company.name`), extraction corrigée en conséquence.
+- Guides + `guides/index.md` + README + `site/README.md` mis à jour à 11 cas. Smoke test offline 11/11 OK.
 
 ## Reste a faire
 

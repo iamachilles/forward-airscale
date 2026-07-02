@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Liste de prospects ICP : genere une liste de cibles via Airscale /find-people.
+"""Liste de prospects ICP : génère une liste de cibles via Airscale /find-people.
 
 1) /find-people/count -> volume (gratuit)
 2) /find-people -> leads matchant l'ICP
-Ecrit un CSV.
+Écrit un CSV.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.csv]
@@ -63,13 +63,13 @@ def main() -> None:
     print("[count] preflight gratuit /find-people/count", file=sys.stderr)
     total = count_people(query)
     if total is not None:
-        print(f"[count] {total} personnes correspondent. Recuperation de {size}.", file=sys.stderr)
+        print(f"[count] {total} personnes correspondent. Récupération de {size}.", file=sys.stderr)
 
     print("[search] /find-people", file=sys.stderr)
     resp = post("find-people", {"query": query, "size": size})
     leads = resp.get("leads") or unwrap(resp).get("leads") or []
     if not leads:
-        sys.exit("Aucun lead retourne. Elargis les filtres.")
+        sys.exit("Aucun lead retourné. Élargis les filtres.")
 
     rows = []
     for ld in leads:

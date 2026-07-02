@@ -1,4 +1,4 @@
 # Mobiles pour cold calling - copie ce fichier en config.yaml et adapte-le.
-input_csv: "input.example.csv"   # relatif a la racine du repo
+input_csv: "input.example.csv"   # relatif à la racine du repo
 linkedin_column: "linkedin_url"
 output_path: null                # sinon examples/telephones.csv

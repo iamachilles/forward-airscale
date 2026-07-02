@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Retrouver les URLs LinkedIn manquantes via Airscale /url-search-people.
 
-Pour chaque ligne (prenom + nom + entreprise) : /url-search-people -> URL profil.
-Ecrit le CSV d'origine + linkedin_url.
+Pour chaque ligne (prénom + nom + entreprise) : /url-search-people -> URL profil.
+Écrit le CSV d'origine + linkedin_url.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.csv]
@@ -44,7 +44,7 @@ def main() -> None:
         in_rows = list(reader)
         in_cols = reader.fieldnames or []
     if not in_rows:
-        sys.exit("CSV d'entree vide.")
+        sys.exit("CSV d'entrée vide.")
 
     out_rows = []
     for row in in_rows:
@@ -53,7 +53,7 @@ def main() -> None:
         ln = (row.get(ln_col) or "").strip()
         co = (row.get(co_col) or "").strip()
         if not (fn and ln and co):
-            print(f"  ! ligne incomplete (prenom/nom/entreprise requis)", file=sys.stderr)
+            print(f"  ! ligne incomplète (prénom/nom/entreprise requis)", file=sys.stderr)
             enriched["linkedin_url"] = ""
             out_rows.append(enriched)
             continue
@@ -63,7 +63,7 @@ def main() -> None:
                 "first_name": fn, "last_name": ln, "company_name": co,
             }))
         except Exception as e:
-            print(f"  ! echec : {e}", file=sys.stderr)
+            print(f"  ! échec : {e}", file=sys.stderr)
             resp = {}
         enriched["linkedin_url"] = resp.get("url", "")
         out_rows.append(enriched)

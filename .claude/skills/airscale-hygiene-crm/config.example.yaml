@@ -1,0 +1,5 @@
+# Rafraîchir et nettoyer un CRM - copie ce fichier en config.yaml et adapte-le.
+input_csv: "input.example.csv"   # export CRM, relatif à la racine du repo ou au config.yaml
+linkedin_column: "linkedin_url"  # colonne URL LinkedIn (identifie chaque ligne)
+company_column: "company"        # entreprise connue dans le CRM (base de comparaison)
+output_path: null                # sinon examples/hygiene-crm.csv

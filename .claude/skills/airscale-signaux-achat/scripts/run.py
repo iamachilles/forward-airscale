@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Comptes en signal d'achat : leads-finder filtre sur funding / croissance d'equipe.
+"""Comptes en signal d'achat : leads-finder filtre sur funding / croissance d'équipe.
 
-1) /leads-finder/preview -> total estime (gratuit)
-2) /leads-finder -> lignes (decideur + compte)
-Compose une colonne `signal` et ecrit un CSV.
+1) /leads-finder/preview -> total estimé (gratuit)
+2) /leads-finder -> lignes (décideur + compte)
+Compose une colonne `signal` et écrit un CSV.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.csv]
@@ -53,9 +53,9 @@ def signal_label(cfg: dict) -> str:
     parts = []
     if cfg.get("funding"):
         m = cfg.get("funding_date_months")
-        parts.append(f"Levee de fonds < {m} mois" if m else "Levee de fonds")
+        parts.append(f"Levée de fonds < {m} mois" if m else "Levée de fonds")
     if cfg.get("growth_department"):
-        parts.append(f"Equipe {cfg['growth_department']} en croissance")
+        parts.append(f"Équipe {cfg['growth_department']} en croissance")
     return " + ".join(parts) or "Compte cible"
 
 
@@ -72,7 +72,7 @@ def company_size(summary: dict) -> str:
 
 
 def map_row(r: dict, sig: str) -> dict:
-    """Mappe une ligne /leads-finder (imbriquee : profile / company.summary / link)."""
+    """Mappe une ligne /leads-finder (imbriquée : profile / company.summary / link)."""
     prof = r.get("profile") or {}
     comp = (r.get("company") or {}).get("summary") or {}
     link = r.get("link") or {}
@@ -104,13 +104,13 @@ def main() -> None:
     print("[preview] preflight gratuit /leads-finder/preview", file=sys.stderr)
     total = preview_leads(filters)
     if total is not None:
-        print(f"[preview] ~{total} resultats estimes. Recuperation de {count}.", file=sys.stderr)
+        print(f"[preview] ~{total} résultats estimés. Récupération de {count}.", file=sys.stderr)
 
     print("[search] /leads-finder", file=sys.stderr)
     resp = post("leads-finder", {"filters": filters, "page": 0, "size": count})
     rows_raw = resp.get("rows") or unwrap(resp).get("rows") or []
     if not rows_raw:
-        sys.exit("Aucun resultat. Assouplis les filtres ou le signal.")
+        sys.exit("Aucun résultat. Assouplis les filtres ou le signal.")
 
     rows = [map_row(r, sig) for r in rows_raw]
 

@@ -1,10 +1,10 @@
 ---
 title: "Les mobiles pour le cold calling"
 tool: airscale
-famille: "Coordonnees"
+famille: "Coordonnées"
 slug: airscale-telephones
 skill: airscale-telephones
-description: "Recuperez le numero de mobile d'une liste de decideurs a partir de leurs profils LinkedIn."
+description: "Récupérez le numéro de mobile d'une liste de décideurs à partir de leurs profils LinkedIn."
 reading_time: 2
 ---
 
@@ -12,15 +12,15 @@ reading_time: 2
 
 ## En bref
 
-Vous avez une liste de profils LinkedIn et vous voulez ajouter le canal telephone. Le skill recupere le mobile de chacun.
+Vous avez une liste de profils LinkedIn et vous voulez ajouter le canal téléphone. Le skill récupère le mobile de chacun.
 
-## Le probleme
+## Le problème
 
-L'email seul ne suffit pas toujours. Mais trouver des mobiles fiables, profil par profil, est lent et la qualite des numeros varie enormement d'une source a l'autre.
+L'email seul ne suffit pas toujours. Mais trouver des mobiles fiables, profil par profil, est lent et la qualité des numéros varie énormément d'une source à l'autre.
 
 ## Ce que vous obtenez
 
-Votre CSV d'origine, plus les colonnes `phone` et `provider`. Une ligne en echec n'arrete pas le reste du fichier.
+Votre CSV d'origine, plus les colonnes `phone` et `provider`. Une ligne en échec n'arrête pas le reste du fichier.
 
 ## Comment vous en servir
 
@@ -29,13 +29,13 @@ Votre CSV d'origine, plus les colonnes `phone` et `provider`. Une ligne en echec
 3. Pointez `input_csv` vers votre fichier et indiquez la colonne LinkedIn.
 4. Lancez le skill (ou via le MCP Airscale).
 
-## Cout
+## Coût
 
-Facture a l'usage (enrichissement telephone par contact, en general plus cher que l'email). Reservez-le aux contacts deja qualifies.
+Facturé à l'usage (enrichissement téléphone par contact, en général plus cher que l'email). Réservez-le aux contacts déjà qualifiés.
 
-## Adapter a votre cas
+## Adapter à votre cas
 
-- Enchainez-le apres une liste ICP (colonne `profileUrl`).
-- Priorisez les comptes chauds avant de consommer des credits telephone.
+- Enchaînez-le après une liste ICP (colonne `profileUrl`).
+- Priorisez les comptes chauds avant de consommer des crédits téléphone.
 
-> Exemple de sortie reelle : `examples/telephones.csv` dans le repo.
+> Exemple de sortie réelle : `examples/telephones.csv` dans le repo.

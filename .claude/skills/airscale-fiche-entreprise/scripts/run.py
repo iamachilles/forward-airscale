@@ -2,8 +2,8 @@
 """Fiche entreprise enrichie via Airscale : /company + /find-people.
 
 1) /company -> firmographie depuis l'URL LinkedIn entreprise
-2) /find-people (companyLinkedinUrl + JobTitle) -> decideurs cles
-Ecrit une fiche markdown.
+2) /find-people (companyLinkedinUrl + JobTitle) -> décideurs clés
+Écrit une fiche markdown.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.md]
@@ -24,7 +24,7 @@ DEFAULT_OUT = ROOT / "examples" / "fiche-entreprise.md"
 FIRMO = [
     ("name", "Nom"), ("industry", "Secteur"), ("companySize", "Taille"),
     ("size", "Taille"), ("website", "Site"), ("companyWebsite", "Site"),
-    ("headquarters", "Siege"), ("location", "Localisation"), ("founded", "Creation"),
+    ("headquarters", "Siège"), ("location", "Localisation"), ("founded", "Création"),
 ]
 
 
@@ -48,7 +48,7 @@ def main() -> None:
     query: dict = {"companyLinkedinUrl": {"include": [url]}}
     if titles:
         query["JobTitle"] = {"include": titles}
-    print("[people] /find-people (decideurs)", file=sys.stderr)
+    print("[people] /find-people (décideurs)", file=sys.stderr)
     people_resp = post("find-people", {"query": query, "size": max_contacts})
     leads = people_resp.get("leads") or unwrap(people_resp).get("leads") or []
 
@@ -64,7 +64,7 @@ def main() -> None:
             seen.add(label)
     desc = company.get("description") or company.get("about") or ""
 
-    # Tableau decideurs
+    # Tableau décideurs
     if leads:
         rows = ["| Nom | Poste | LinkedIn |", "|---|---|---|"]
         for ld in leads:
@@ -76,16 +76,16 @@ def main() -> None:
             rows.append(f"| {fn} {ln} | {jt} | {link} |")
         people_block = "\n".join(rows)
     else:
-        people_block = "_(aucun decideur retourne pour ces fonctions)_"
+        people_block = "_(aucun décideur retourné pour ces fonctions)_"
 
     out_text = (
         f"# Fiche entreprise - {name}\n\n"
-        f"_Genere le {date.today().isoformat()} via Airscale._\n\n"
+        f"_Généré le {date.today().isoformat()} via Airscale._\n\n"
         f"## Firmographie\n\n"
-        + ("\n".join(firmo_lines) if firmo_lines else "- (firmographie non retournee)")
+        + ("\n".join(firmo_lines) if firmo_lines else "- (firmographie non retournée)")
         + "\n\n"
         + (f"## Description\n\n{desc}\n\n" if desc else "")
-        + f"## Decideurs cles\n\n{people_block}\n"
+        + f"## Décideurs clés\n\n{people_block}\n"
     )
     dest = args.out or cfg.get("output_path") or str(DEFAULT_OUT)
     path = write_output(out_text, dest)

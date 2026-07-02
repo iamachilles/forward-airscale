@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Mobiles pour cold calling via Airscale /phone.
 
-Pour chaque URL LinkedIn du CSV : /phone -> numero de mobile.
-Ecrit le CSV d'origine + phone, provider.
+Pour chaque URL LinkedIn du CSV : /phone -> numéro de mobile.
+Écrit le CSV d'origine + phone, provider.
 
 Usage:
     python scripts/run.py --config config.yaml [--out chemin.csv]
@@ -24,7 +24,7 @@ ENRICH = ["phone", "provider"]
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Enrichissement telephone Airscale")
+    ap = argparse.ArgumentParser(description="Enrichissement téléphone Airscale")
     ap.add_argument("--config", required=True)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
@@ -43,7 +43,7 @@ def main() -> None:
         in_rows = list(reader)
         in_cols = reader.fieldnames or []
     if not in_rows:
-        sys.exit("CSV d'entree vide.")
+        sys.exit("CSV d'entrée vide.")
 
     out_rows = []
     for row in in_rows:
@@ -59,7 +59,7 @@ def main() -> None:
         try:
             resp = unwrap(post("phone", {"linkedin_profile_url": li}))
         except Exception as e:
-            print(f"  ! echec : {e}", file=sys.stderr)
+            print(f"  ! échec : {e}", file=sys.stderr)
             resp = {}
         enriched["phone"] = resp.get("phone_numbers", resp.get("phone", ""))
         enriched["provider"] = resp.get("provider", "")

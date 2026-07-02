@@ -1,4 +1,4 @@
-# Recherche IA structuree - copie ce fichier en config.yaml et adapte-le.
-prompt: "Qui est le CEO d'Airscale et en quelle annee l'entreprise a-t-elle ete fondee ?"
-schema_file: "schema.example.json"   # null pour une reponse en texte source
+# Recherche IA structurée - copie ce fichier en config.yaml et adapte-le.
+prompt: "Qui est le CEO d'Airscale et en quelle année l'entreprise a-t-elle été fondée ?"
+schema_file: "schema.example.json"   # null pour une réponse en texte source
 output_path: null                    # sinon examples/recherche-ia.md
