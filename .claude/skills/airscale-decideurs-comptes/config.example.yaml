@@ -1,0 +1,12 @@
+# Les décideurs de tes comptes cibles - copie ce fichier en config.yaml et adapte-le.
+input_csv: "input.example.csv"   # relatif à la racine du repo ou au config.yaml
+domain_column: "domain"          # colonne des domaines d'entreprise
+job_titles:                      # tokens larges de séniorité (matching par mot)
+  - "Head"
+  - "VP"
+  - "Chief"
+  - "Director"
+  - "CEO"
+  - "Founder"
+per_company: 3                   # nombre de décideurs par compte
+output_path: null                # sinon examples/decideurs-comptes.csv

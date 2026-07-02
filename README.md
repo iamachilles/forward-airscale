@@ -1,8 +1,8 @@
 # forward-airscale
 
-Des **skills prêts à l'emploi** pour transformer [Airscale](https://www.airscale.io) (sourcing et enrichissement de leads par API, façon Clay) en résultats métier concrets : listes ICP, signaux d'achat, emails et téléphones vérifiés, fiches enrichies, reverse lookup.
+Des **skills prêts à l'emploi** pour transformer [Airscale](https://www.airscale.io) (sourcing et enrichissement de leads par API, façon Clay) en résultats métier concrets : listes ICP, décideurs de comptes, emails et téléphones vérifiés, fiches enrichies, reverse lookup.
 
-Chaque skill est un **template** que tu adaptes à ta cible (ton ICP, ton fichier, tes signaux) en remplissant un `config.yaml`. Tu le lances depuis ton agent (Claude Code, Codex...) ou directement en ligne de commande, et tu obtiens un livrable mis en forme (CSV, fiche markdown).
+Chaque skill est un **template** que tu adaptes à ta cible (ton ICP, ton fichier, tes comptes) en remplissant un `config.yaml`. Tu le lances depuis ton agent (Claude Code, Codex...) ou directement en ligne de commande, et tu obtiens un livrable mis en forme (CSV, fiche markdown).
 
 > Guides côté business (cas d'usage, exemples, comment s'en servir) : **[les guides Forward](https://www.forward-ai.fr/cas-d-usage/airscale)**.
 
@@ -28,7 +28,7 @@ Clé API : onglet API sur [app.airscale.io](https://app.airscale.io). Airscale e
 | Skill | Ce qu'il produit |
 |---|---|
 | `airscale-liste-icp` | Liste de cibles correspondant à ton ICP (décideurs + entreprise + LinkedIn) |
-| `airscale-signaux-achat` | Comptes en signal d'achat (levée de fonds récente, équipe qui grossit) |
+| `airscale-decideurs-comptes` | Décideurs de tes comptes cibles, à partir d'une liste de domaines |
 | `airscale-pipeline-outbound` | Liste ICP + coordonnées (email, mobile, perso) en un job : prête à séquencer |
 
 ### Coordonnées
@@ -73,9 +73,9 @@ Chaque skill est un template. Copie son `config.example.yaml` en `config.yaml`, 
 
 ```
 .claude/skills/airscale-*/   un dossier par skill : SKILL.md + config.example.yaml + scripts/
-lib/airscale_helpers.py      couche partagee (auth, POST + backoff, preflights gratuits, ecriture)
-examples/                    une sortie reelle par skill
-guides/                      les guides cote business (un par cas + index)
+lib/airscale_helpers.py      couche partagée (auth, POST + backoff, preflights gratuits, écriture)
+examples/                    une sortie réelle par skill
+guides/                      les guides côté business (un par cas + index)
 docs/skill-template.md       la convention d'un skill (pour en ajouter)
 ```
 

@@ -17,7 +17,7 @@ Construit le 2026-06-30 par Claude, en autonomie, calqué sur le repo [`forward-
 
 ## Les 11 skills (4 familles)
 
-Sourcing : `airscale-liste-icp`, `airscale-signaux-achat`, `airscale-pipeline-outbound`.
+Sourcing : `airscale-liste-icp`, `airscale-decideurs-comptes`, `airscale-pipeline-outbound`.
 Coordonnées : `airscale-emails-fichier`, `airscale-telephones`, `airscale-multicanal`.
 Enrichissement : `airscale-fiche-entreprise`, `airscale-trouver-linkedin`, `airscale-hygiene-crm`.
 Identification : `airscale-reverse-lookup`, `airscale-recherche-ia`.

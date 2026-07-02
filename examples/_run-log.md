@@ -6,7 +6,7 @@ pour servir d'illustration (cibles publiques). Ils ne se régénèrent pas à ch
 | Skill | Exemple | Endpoints réels appelés | Résultat |
 |---|---|---|---|
 | airscale-liste-icp | liste-icp.csv | find-people/count + find-people (10) | 10 Head of Sales FR |
-| airscale-signaux-achat | signaux-achat.csv | leads-finder/preview + leads-finder (10) | 10 CEO de boîtes ayant levé < 6 mois |
+| airscale-decideurs-comptes | decideurs-comptes.csv | find-people x3 (un par domaine) | 9 décideurs sur 3 comptes (Qonto, PayFit, Spendesk) |
 | airscale-emails-fichier | emails-fichier.csv | email x3 | 2/3 emails pro vérifiés |
 | airscale-telephones | telephones.csv | phone x2 | 1/2 mobiles |
 | airscale-multicanal | multicanal.csv | email + personal-email + phone | email perso + mobile trouvés |

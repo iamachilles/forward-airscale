@@ -16,7 +16,7 @@ Colin a déjà la page Linkup en ligne sous cette logique :
 | Slug | Guide source | Famille |
 |---|---|---|
 | airscale-liste-icp | guides/airscale-liste-icp.md | Sourcing |
-| airscale-signaux-achat | guides/airscale-signaux-achat.md | Sourcing |
+| airscale-decideurs-comptes | guides/airscale-decideurs-comptes.md | Sourcing |
 | airscale-pipeline-outbound | guides/airscale-pipeline-outbound.md | Sourcing |
 | airscale-emails-fichier | guides/airscale-emails-fichier.md | Coordonnées |
 | airscale-telephones | guides/airscale-telephones.md | Coordonnées |

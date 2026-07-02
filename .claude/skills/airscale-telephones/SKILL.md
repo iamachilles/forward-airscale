@@ -27,7 +27,7 @@ Deux modes :
 ## Adapter à ton cas
 
 - **Enchaîner après une liste ICP** : passe le CSV de `airscale-liste-icp` (colonne `profileUrl`) en entrée, en réglant `linkedin_column: "profileUrl"`.
-- **Prioriser** : ne garde que les comptes chauds (`airscale-signaux-achat`) avant de consommer des crédits téléphone (plus chers que l'email).
+- **Prioriser** : ne garde que les contacts qualifiés avant de consommer des crédits téléphone (plus chers que l'email).
 
 ## Procédure
 

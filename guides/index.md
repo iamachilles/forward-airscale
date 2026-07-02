@@ -3,7 +3,7 @@ title: "Le kit Airscale"
 tool: airscale
 type: famille
 slug: airscale
-description: "11 cas d'usage prêts à l'emploi pour transformer Airscale en résultats commerciaux : listes ICP, signaux d'achat, emails et téléphones vérifiés, fiches enrichies, hygiène de CRM."
+description: "11 cas d'usage prêts à l'emploi pour transformer Airscale en résultats commerciaux : listes ICP, décideurs de comptes, emails et téléphones vérifiés, fiches enrichies, hygiène de CRM."
 ---
 
 # Le kit Airscale (11 cas)
@@ -23,7 +23,7 @@ Airscale est une plateforme de **sourcing et d'enrichissement de leads** (façon
 
 ### Sourcing
 - **[Une liste de prospects ICP à la demande](airscale-liste-icp.md)** : vos cibles (fonctions, zone, mots-clés) avec entreprise et LinkedIn.
-- **[Les comptes en signal d'achat](airscale-signaux-achat.md)** : entreprises qui viennent de lever des fonds ou dont une équipe grossit.
+- **[Les décideurs de tes comptes cibles](airscale-decideurs-comptes.md)** : à partir de ta liste de comptes, les bons interlocuteurs dans chacun.
 - **[Une liste prête à séquencer, de bout en bout](airscale-pipeline-outbound.md)** : sourcing ICP et coordonnées complètes en une seule commande.
 
 ### Coordonnées
